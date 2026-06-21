@@ -387,17 +387,8 @@ footer{padding:4rem;display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:3.5rem;
   margin-left:3px;
 }
 .video-phone-frame.playing .video-play-icon{opacity:0;transform:translate(-50%,-50%) scale(0.7);}
-/* Touch mode: ícone sempre visível e clicável */
-.video-phone-frame.touch-mode .video-play-icon{pointer-events:auto;cursor:pointer;}
-.video-phone-frame.touch-mode.playing .video-play-icon{opacity:1;transform:translate(-50%,-50%) scale(1);}
-/* Ícone de pause no touch mode */
-.video-phone-frame.touch-mode.playing .video-play-icon::after{
-  border-style:none;
-  width:5px;height:20px;
-  background:#000;
-  box-shadow:10px 0 0 #000;
-  margin-left:-2px;
-}
+/* Touch mode: ícone visível apenas quando pausado */
+.video-phone-frame.touch-mode .video-play-icon{pointer-events:none;cursor:default;}
 .video-badge{
   position:absolute;bottom:-16px;left:50%;transform:translateX(-50%);
   background:var(--gold);color:#000;
