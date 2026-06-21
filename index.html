@@ -387,6 +387,17 @@ footer{padding:4rem;display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:3.5rem;
   margin-left:3px;
 }
 .video-phone-frame.playing .video-play-icon{opacity:0;transform:translate(-50%,-50%) scale(0.7);}
+/* Touch mode: ícone sempre visível e clicável */
+.video-phone-frame.touch-mode .video-play-icon{pointer-events:auto;cursor:pointer;}
+.video-phone-frame.touch-mode.playing .video-play-icon{opacity:1;transform:translate(-50%,-50%) scale(1);}
+/* Ícone de pause no touch mode */
+.video-phone-frame.touch-mode.playing .video-play-icon::after{
+  border-style:none;
+  width:5px;height:20px;
+  background:#000;
+  box-shadow:10px 0 0 #000;
+  margin-left:-2px;
+}
 .video-badge{
   position:absolute;bottom:-16px;left:50%;transform:translateX(-50%);
   background:var(--gold);color:#000;
@@ -1105,18 +1116,32 @@ footer{padding:4rem;display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:3.5rem;
 </div>
 
 <script>
-// Reel video — play com áudio no hover
+// Reel video
 const reelVideo = document.getElementById('reelVideo');
 const reelFrame = document.getElementById('reelFrame');
 if (reelVideo && reelFrame) {
-  reelFrame.addEventListener('mouseenter', () => {
-    reelVideo.play();
-    reelFrame.classList.add('playing');
-  });
-  reelFrame.addEventListener('mouseleave', () => {
-    reelVideo.pause();
-    reelFrame.classList.remove('playing');
-  });
+  const isTouch = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
+  if (isTouch) {
+    reelFrame.classList.add('touch-mode');
+    reelFrame.addEventListener('click', () => {
+      if (reelVideo.paused) {
+        reelVideo.play();
+        reelFrame.classList.add('playing');
+      } else {
+        reelVideo.pause();
+        reelFrame.classList.remove('playing');
+      }
+    });
+  } else {
+    reelFrame.addEventListener('mouseenter', () => {
+      reelVideo.play();
+      reelFrame.classList.add('playing');
+    });
+    reelFrame.addEventListener('mouseleave', () => {
+      reelVideo.pause();
+      reelFrame.classList.remove('playing');
+    });
+  }
 }
 
 // Cursor glow
