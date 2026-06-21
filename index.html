@@ -5,11 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>João de Carvalho & Pêgo Advocacia | Especialistas em Acidentes de Trabalho</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@200;300;400;500&family=Bodoni+Moda:opsz,wght@12,300;12,400;72,300;72,400&family=Anton&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
 :root{
-  --gold:#C8A96E;--gold-l:#E2C99A;--gold-d:#9A7A4A;
+  --gold:#C4922A;--gold-l:#E2B55A;--gold-d:#96710F;
   --black:#080808;--dark:#111;--dark2:#1A1A1A;
   --white:#FFF;--cream:#F5F0E8;
   --line:rgba(255,255,255,0.06);--line2:rgba(255,255,255,0.11);
@@ -42,7 +42,7 @@ nav{
   background:rgba(8,8,8,0.88);backdrop-filter:blur(20px);
   transition:border-color .4s;
 }
-.nav-logo-wrap{display:flex;align-items:center;}.nav-logo-img{height:34px;display:block;filter:invert(1);}.nav-logo{font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-weight:600;letter-spacing:.1em;}
+.nav-logo-wrap{display:flex;align-items:center;}.hero-logo{display:none !important;}.nav-logo-img{height:34px;display:block;filter:invert(1);}.nav-logo{font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-weight:600;letter-spacing:.1em;}
 .nav-logo em{color:var(--gold);font-style:normal;}
 .nav-logo small{font-weight:200;font-size:.9rem;letter-spacing:.05em;color:rgba(255,255,255,.5);}
 .nav-links{display:flex;gap:2.5rem;list-style:none;}
@@ -62,17 +62,19 @@ nav{
 .label{font-size:.62rem;font-weight:400;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);}
 .hero-title{margin-bottom:2rem;}
 .display-xl{
-  font-family:'Cormorant Garamond',serif;
-  font-size:clamp(1.9rem,4vw,5rem);
-  font-weight:300;line-height:.93;letter-spacing:-.02em;text-transform:uppercase;
+  font-family:'Anton','Oswald',sans-serif;
+  font-size:clamp(2.8rem,5.5vw,7rem);
+  font-weight:400;line-height:1.05;letter-spacing:.02em;text-transform:uppercase;
+  text-shadow:0 2px 50px rgba(255,255,255,.06);
 }
-.display-xl em{color:var(--gold);font-style:normal;}
+.display-xl em{color:var(--gold);font-style:normal;text-shadow:0 0 30px rgba(196,146,42,.3);}
 .display-lg{
-  font-family:'Cormorant Garamond',serif;
-  font-size:clamp(2rem,4.5vw,5rem);
-  font-weight:300;line-height:.97;letter-spacing:-.01em;text-transform:uppercase;
+  font-family:'Anton','Oswald',sans-serif;
+  font-size:clamp(2.4rem,4.5vw,6rem);
+  font-weight:400;line-height:1.05;letter-spacing:.02em;text-transform:uppercase;
+  text-shadow:0 2px 50px rgba(255,255,255,.06);
 }
-.display-lg em{color:var(--gold);font-style:normal;}
+.display-lg em{color:var(--gold);font-style:normal;text-shadow:0 0 30px rgba(196,146,42,.3);}
 .hero-desc{font-size:.88rem;line-height:1.9;color:rgba(255,255,255,.55);max-width:30rem;margin-bottom:2.5rem;}
 .hero-cta-row{display:flex;align-items:center;gap:2.5rem;margin-bottom:4rem;}
 .btn-white{
@@ -104,7 +106,7 @@ nav{
 .stat-item:first-child{padding-right:1.5rem;}
 .stat-item:not(:first-child){padding-left:1.5rem;}
 .stat-item:last-child{border-right:none;}
-.stat-num{font-family:'Cormorant Garamond',serif;font-size:2.4rem;font-weight:300;color:var(--white);margin-bottom:.3rem;}
+.stat-num{font-family:'Bodoni Moda','Cormorant Garamond',serif;font-size:3.6rem;font-weight:300;color:var(--white);margin-bottom:.3rem;letter-spacing:.02em;white-space:nowrap;text-shadow:0 0 22px rgba(255,255,255,.28),0 0 70px rgba(255,255,255,.07);}
 .stat-lbl{font-size:.58rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.35);}
 
 /* HERO RIGHT — CARDS */
@@ -167,7 +169,7 @@ nav{
 .srv-card:hover{background:rgba(200,169,110,.04);}
 .srv-num{font-family:'Cormorant Garamond',serif;font-size:.72rem;letter-spacing:.2em;color:var(--gold);margin-bottom:1.8rem;}
 .srv-icon{width:2.2rem;height:2.2rem;color:var(--gold);margin-bottom:1.2rem;}
-.srv-title{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:400;margin-bottom:.8rem;}
+.srv-title{font-family:'Oswald',sans-serif;font-size:1.4rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase;margin-bottom:.8rem;}
 .srv-desc{font-size:.76rem;line-height:1.85;color:rgba(255,255,255,.45);margin-bottom:1.8rem;}
 .srv-arrow{font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);text-decoration:none;}
 .srv-arrow::after{content:' →';}
@@ -203,7 +205,7 @@ nav{
 .cap-card-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:2.5rem;}
 .cap-tag{font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);}
 .cap-sub{font-size:.58rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.28);}
-.cap-title{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:400;line-height:1.1;margin-bottom:1.3rem;}
+.cap-title{font-family:'Anton',sans-serif;font-size:2.2rem;font-weight:400;letter-spacing:.03em;line-height:1.05;text-transform:uppercase;margin-bottom:1.3rem;}
 .cap-desc{font-size:.77rem;line-height:1.88;color:rgba(255,255,255,.45);margin-bottom:1.8rem;}
 .cap-list{display:grid;grid-template-columns:1fr 1fr;gap:.65rem;list-style:none;}
 .cap-list li{display:flex;align-items:center;gap:.45rem;font-size:.72rem;color:rgba(255,255,255,.55);}
@@ -225,19 +227,28 @@ nav{
 .img-caption p{margin-bottom:.7rem;}
 .img-caption p:last-child{margin-bottom:0;}
 
+/* POSTS IDV */
+.posts-idv{padding:5rem 4rem;border-bottom:1px solid var(--line2);}
+.posts-idv-hd{margin-bottom:3.5rem;}
+.posts-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2.5rem;}
+.post-card-img{width:100%;aspect-ratio:1/1;object-fit:cover;object-position:center top;display:block;border:1px solid var(--line2);margin-bottom:1.8rem;}
+.post-card-bar{width:2rem;height:1px;background:var(--gold);margin-bottom:1rem;}
+.post-card-lead{font-family:'Oswald',sans-serif;font-size:1.1rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase;line-height:1.4;color:var(--white);margin-bottom:1rem;}
+.post-card-body{font-size:.82rem;line-height:1.95;color:rgba(255,255,255,.45);}
+.post-card-body p+p{margin-top:.75rem;}
+
 /* PROCESSO */
 .processo{padding:9rem 4rem;border-bottom:1px solid var(--line2);}
 .proc-grid{display:grid;grid-template-columns:1fr 2fr;gap:7rem;align-items:start;}
 .proc-left .label{margin-bottom:1.5rem;}
 .proc-left p{margin-top:1.8rem;font-size:.77rem;line-height:1.88;color:rgba(255,255,255,.32);}
-.proc-steps{}
 .proc-step{
-  display:grid;grid-template-columns:3.5rem 1fr;gap:1.8rem;
+  display:grid;grid-template-columns:6rem 1fr;gap:2.5rem;align-items:start;
   padding:2.2rem 0;border-bottom:1px solid var(--line2);
 }
 .proc-step:first-child{border-top:1px solid var(--line2);}
-.step-n{font-family:'Cormorant Garamond',serif;font-size:.95rem;font-weight:300;color:var(--gold);letter-spacing:.1em;padding-top:.1rem;}
-.step-title{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:400;margin-bottom:.6rem;}
+.step-n{font-family:'Bodoni Moda','Cormorant Garamond',serif;font-size:4.2rem;font-weight:300;color:var(--white);letter-spacing:.04em;line-height:1;text-shadow:0 0 22px rgba(255,255,255,.28),0 0 70px rgba(255,255,255,.07);}
+.step-title{font-family:'Oswald',sans-serif;font-size:1.25rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase;margin-bottom:.6rem;}
 .step-desc{font-size:.75rem;line-height:1.88;color:rgba(255,255,255,.38);}
 .step-tags{display:flex;gap:.45rem;margin-top:.9rem;flex-wrap:wrap;}
 .step-tag{font-size:.52rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.3);border:1px solid rgba(255,255,255,.08);padding:.28rem .55rem;}
@@ -324,13 +335,13 @@ footer{padding:4rem;display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:3.5rem;
   background:var(--black);
 }
 .adv-card:hover .adv-photo-wrap{border-color:var(--gold);box-shadow:0 0 18px rgba(200,169,110,.1);}
-.adv-photo-wrap img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block;transform:scale(2);transform-origin:center top;}
+.adv-photo-wrap img{width:100%;height:100%;object-fit:cover;object-position:center 15%;display:block;}
 .adv-initials{
   width:100%;height:100%;display:flex;align-items:center;justify-content:center;
   font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-weight:300;
   color:var(--gold-d);letter-spacing:.05em;
 }
-.adv-name{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:400;text-align:center;line-height:1.2;margin-bottom:.45rem;}
+.adv-name{font-family:'Oswald',sans-serif;font-size:1.35rem;font-weight:500;letter-spacing:.04em;text-align:center;line-height:1.2;text-transform:uppercase;margin-bottom:.45rem;}
 .adv-oab{font-size:.57rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);text-align:center;margin-bottom:1.5rem;}
 .adv-line{width:1.6rem;height:1px;background:rgba(200,169,110,.3);margin:0 auto 1.5rem;}
 .adv-desc{font-size:.74rem;line-height:1.9;color:rgba(255,255,255,.38);text-align:center;margin-bottom:2rem;flex:1;}
@@ -401,7 +412,7 @@ footer{padding:4rem;display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:3.5rem;
 .dep-hd .label{margin-bottom:1.2rem;}
 .dep-rating{display:flex;align-items:center;justify-content:center;gap:.7rem;margin:1.5rem 0 .6rem;}
 .dep-stars-big{color:#FBBC04;font-size:1.3rem;letter-spacing:.12em;}
-.dep-rating-num{font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:300;color:var(--white);}
+.dep-rating-num{font-family:'Bodoni Moda','Cormorant Garamond',serif;font-size:2.4rem;font-weight:300;color:var(--white);text-shadow:0 0 22px rgba(255,255,255,.28),0 0 60px rgba(255,255,255,.07);}
 .dep-rating-ct{font-size:.72rem;color:rgba(255,255,255,.35);letter-spacing:.06em;}
 .google-logo{display:flex;align-items:center;justify-content:center;gap:.3rem;margin:.6rem 0 0;font-size:1rem;font-weight:600;letter-spacing:-.02em;}
 .g-b{color:#4285F4;}.g-r{color:#EA4335;}.g-y{color:#FBBC04;}.g-g{color:#34A853;}
@@ -473,7 +484,7 @@ footer{padding:4rem;display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:3.5rem;
       <span class="label">Especialistas em Acidentes de Trabalho</span>
     </div>
     <div class="hero-title fade-up d1">
-      <h1 class="display-xl">ACIDENTE<br>DE TRABALHO?<br>VOCÊ TEM<br><em>DIREITOS.</em></h1>
+      <h1 class="display-xl">ACIDENTE<br>DE TRABALHO?<br><em>VOCÊ TEM</em><br><em>DIREITOS.</em></h1>
     </div>
     <p class="hero-desc fade-up d2">Somos especializados em defender trabalhadores vítimas de acidentes e doenças ocupacionais. Seu caso recebe atenção total — da perícia até a indenização final.</p>
     <div class="hero-cta-row fade-up d3">
@@ -626,55 +637,6 @@ footer{padding:4rem;display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:3.5rem;
     </div>
   </div>
 
-  <div class="img-grid fade-up d1">
-    <div class="img-card-wrap">
-      <div class="img-card">
-        <img class="img-card-bg" src="clientes/j c p advocacia/fotos/Captura de tela 2026-06-20 215119.png" alt="Foto 1" style="object-position: 65% center;">
-        <div class="img-overlay">
-          <div class="img-area">Nexo Causal</div>
-          <div class="img-title">Prova da Origem<br>Ocupacional</div>
-        </div>
-      </div>
-      <div class="img-caption">
-        <p>Você trabalha em um ambiente com calor excessivo, produtos químicos, barulho intenso ou risco constante de acidentes?</p>
-        <p>Muitos trabalhadores têm direitos que sequer sabem que existem.</p>
-        <p>Em diversos casos, é possível ter direito a adicionais, indenizações ou outras verbas relacionadas às condições de trabalho. O problema é que muita gente passa anos sem buscar orientação e acaba deixando esses direitos para trás.</p>
-        <p>Cada situação precisa ser analisada individualmente, mas uma coisa é certa: informação é o primeiro passo para garantir seus direitos.</p>
-        <p>Se você tem dúvidas sobre o seu caso, entre em contato com nosso escritório. Nossa equipe pode analisar sua situação e orientar você sobre os próximos passos.</p>
-      </div>
-    </div>
-    <div class="img-card-wrap">
-      <div class="img-card">
-        <img class="img-card-bg" src="clientes/j c p advocacia/fotos/Captura de tela 2026-06-20 215153.png" alt="Foto 2">
-        <div class="img-overlay">
-          <div class="img-area">CAT & Perícia</div>
-          <div class="img-title">Documentação<br>& Laudos Médicos</div>
-        </div>
-      </div>
-      <div class="img-caption">
-        <p>Há mais de 11 anos, nosso escritório se consolidou como referência no mercado jurídico, sempre com credibilidade, expertise e um atendimento humanizado.</p>
-        <p>Estamos prontos para ouvir, acolher e oferecer soluções claras e eficazes em Direito Previdenciário e Trabalhista.</p>
-        <p>Sua confiança é a nossa maior conquista. Conte conosco para trilhar o caminho certo rumo à justiça e cidadania.</p>
-      </div>
-    </div>
-    <div class="img-card-wrap">
-      <div class="img-card">
-        <img class="img-card-bg" src="clientes/j c p advocacia/fotos/Captura de tela 2026-06-20 215229.png" alt="Foto 3">
-        <div class="img-overlay">
-          <div class="img-area">Reabilitação</div>
-          <div class="img-title">Retorno ao Trabalho<br>& Pensão Vitalícia</div>
-        </div>
-      </div>
-      <div class="img-caption">
-        <p>Pedir demissão não é tão simples quanto parece.</p>
-        <p>Muita gente acha que vai sair sem receber nada… mas também tem gente que perde dinheiro por não entender seus direitos.</p>
-        <p>Você pode sim receber valores — mas também pode deixar dinheiro na mesa se fizer errado.</p>
-        <p>E tem um detalhe que quase ninguém te conta: o aviso prévio pode impactar diretamente no que você vai receber.</p>
-        <p>Antes de tomar qualquer decisão, entenda tudo com clareza. Isso pode evitar um prejuízo grande.</p>
-      </div>
-    </div>
-  </div>
-
 </section>
 
 <!-- PROCESSO -->
@@ -733,7 +695,7 @@ footer{padding:4rem;display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:3.5rem;
 
     <div class="adv-card fade-up">
       <div class="adv-photo-wrap">
-        <img src="clientes/j c p advocacia/fotos doutores/joão.png" alt="Dr. João Filipe de Carvalho" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <img src="clientes/j c p advocacia/fotos doutores/filipe de carvalho.jpeg" alt="Dr. João Filipe de Carvalho" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
         <div class="adv-initials" style="display:none">JC</div>
       </div>
       <div class="adv-name">Dr. João Filipe<br>de Carvalho</div>
@@ -745,7 +707,7 @@ footer{padding:4rem;display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:3.5rem;
 
     <div class="adv-card fade-up d2">
       <div class="adv-photo-wrap">
-        <img src="clientes/j c p advocacia/fotos doutores/laura.png" alt="Dra. Laura Lopes" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <img src="clientes/j c p advocacia/fotos doutores/laura lopes.jpeg" alt="Dra. Laura Lopes" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
         <div class="adv-initials" style="display:none">LL</div>
       </div>
       <div class="adv-name">Dra. Laura<br>Lopes</div>
@@ -757,7 +719,7 @@ footer{padding:4rem;display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:3.5rem;
 
     <div class="adv-card fade-up d3">
       <div class="adv-photo-wrap">
-        <img src="clientes/j c p advocacia/fotos doutores/yasmim.png" alt="Dra. Yasmim Estevam de Melo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <img src="clientes/j c p advocacia/fotos doutores/yasmim estevam.jpeg" alt="Dra. Yasmim Estevam de Melo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
         <div class="adv-initials" style="display:none">YM</div>
       </div>
       <div class="adv-name">Dra. Yasmim<br>Estevam de Melo</div>
