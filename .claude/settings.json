@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(winget install --id Git.Git -e --silent 2>&1)",
+      "PowerShell(Get-ChildItem \"c:\\\\Users\\\\felip\\\\Documents\\\\CLAUDE CODE\\\\LANDING PAGE\\\\clientes\\\\j c p advocacia\\\\vídeos\" | Select-Object Name, @{N=\"MB\";E={[math]::Round\\($_.Length/1MB,2\\)}})",
+      "PowerShell(Get-ChildItem \"c:\\\\Users\\\\felip\\\\Documents\\\\CLAUDE CODE\\\\LANDING PAGE\" -Recurse -File | Select-Object Name, @{N=\"MB\";E={[math]::Round\\($_.Length/1MB,2\\)}} | Sort-Object MB -Descending)"
+    ]
+  }
+}
