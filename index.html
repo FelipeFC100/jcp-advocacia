@@ -1,0 +1,1086 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>João de Carvalho & Pêgo Advocacia | Especialistas em Acidentes de Trabalho</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+:root{
+  --gold:#C8A96E;--gold-l:#E2C99A;--gold-d:#9A7A4A;
+  --black:#080808;--dark:#111;--dark2:#1A1A1A;
+  --white:#FFF;--cream:#F5F0E8;
+  --line:rgba(255,255,255,0.06);--line2:rgba(255,255,255,0.11);
+}
+html{scroll-behavior:smooth;}
+body{background:var(--black);color:var(--white);font-family:'Jost',sans-serif;font-weight:300;overflow-x:hidden;}
+
+/* GRID LINES */
+.grid-bg{
+  position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0;
+  background-image:linear-gradient(to right,rgba(255,255,255,0.055) 1px,transparent 1px);
+  background-size:calc(100% / 12) 100%;
+}
+
+/* CURSOR GLOW */
+.cursor-glow{
+  position:fixed;width:400px;height:400px;border-radius:50%;
+  background:radial-gradient(circle,rgba(200,169,110,0.04) 0%,transparent 70%);
+  pointer-events:none;z-index:1;transform:translate(-50%,-50%);
+  transition:opacity .3s;
+}
+
+nav,section,footer,header,.marquee-section{position:relative;z-index:2;}
+
+/* NAV */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  padding:1.4rem 4rem;display:flex;align-items:center;justify-content:space-between;
+  border-bottom:1px solid var(--line);
+  background:rgba(8,8,8,0.88);backdrop-filter:blur(20px);
+  transition:border-color .4s;
+}
+.nav-logo-wrap{display:flex;align-items:center;}.nav-logo-img{height:34px;display:block;filter:invert(1);}.nav-logo{font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-weight:600;letter-spacing:.1em;}
+.nav-logo em{color:var(--gold);font-style:normal;}
+.nav-logo small{font-weight:200;font-size:.9rem;letter-spacing:.05em;color:rgba(255,255,255,.5);}
+.nav-links{display:flex;gap:2.5rem;list-style:none;}
+.nav-links a{font-size:.62rem;font-weight:400;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.5);text-decoration:none;transition:color .3s;}
+.nav-links a:hover{color:var(--gold);}
+.nav-cta{font-size:.62rem;font-weight:500;letter-spacing:.15em;text-transform:uppercase;color:var(--black);background:var(--gold);padding:.7rem 1.6rem;text-decoration:none;transition:background .3s;}
+.nav-cta:hover{background:var(--gold-l);}
+
+/* HERO */
+.hero{
+  min-height:100vh;padding:9rem 4rem 6rem;
+  display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;
+  border-bottom:1px solid var(--line2);
+}
+.hero-tag{display:flex;align-items:center;gap:.75rem;margin-bottom:2.5rem;}
+.hero-tag-bar{width:1.8rem;height:1px;background:var(--gold);}
+.label{font-size:.62rem;font-weight:400;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);}
+.hero-title{margin-bottom:2rem;}
+.display-xl{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(1.9rem,4vw,5rem);
+  font-weight:300;line-height:.93;letter-spacing:-.02em;text-transform:uppercase;
+}
+.display-xl em{color:var(--gold);font-style:normal;}
+.display-lg{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(2rem,4.5vw,5rem);
+  font-weight:300;line-height:.97;letter-spacing:-.01em;text-transform:uppercase;
+}
+.display-lg em{color:var(--gold);font-style:normal;}
+.hero-desc{font-size:.88rem;line-height:1.9;color:rgba(255,255,255,.55);max-width:30rem;margin-bottom:2.5rem;}
+.hero-cta-row{display:flex;align-items:center;gap:2.5rem;margin-bottom:4rem;}
+.btn-white{
+  display:flex;align-items:center;gap:.9rem;background:var(--white);color:var(--black);
+  padding:.9rem 2rem;font-size:.72rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;
+  text-decoration:none;transition:background .3s;border:none;cursor:pointer;
+}
+.btn-white:hover{background:var(--gold);}
+.btn-gold{
+  display:flex;align-items:center;gap:.9rem;background:var(--gold);color:var(--black);
+  padding:.9rem 2rem;font-size:.72rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;
+  text-decoration:none;transition:background .3s;border:none;cursor:pointer;
+}
+.btn-gold:hover{background:var(--gold-l);}
+.btn-outline{
+  display:flex;align-items:center;gap:.9rem;background:transparent;color:var(--white);
+  border:1px solid rgba(255,255,255,.2);padding:.9rem 2rem;font-size:.72rem;font-weight:400;
+  letter-spacing:.12em;text-transform:uppercase;text-decoration:none;transition:all .3s;
+}
+.btn-outline:hover{border-color:var(--gold);color:var(--gold);}
+.hero-areas{display:flex;align-items:center;gap:1.5rem;}
+.hero-areas span{
+  display:flex;align-items:center;gap:.4rem;
+  font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.45);
+}
+.hero-areas span::before{content:'■';font-size:.35rem;color:var(--gold);}
+.hero-stats{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line2);padding-top:2rem;}
+.stat-item{padding-right:1.5rem;border-right:1px solid var(--line2);}
+.stat-item:first-child{padding-right:1.5rem;}
+.stat-item:not(:first-child){padding-left:1.5rem;}
+.stat-item:last-child{border-right:none;}
+.stat-num{font-family:'Cormorant Garamond',serif;font-size:2.4rem;font-weight:300;color:var(--white);margin-bottom:.3rem;}
+.stat-lbl{font-size:.58rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.35);}
+
+/* HERO RIGHT — CARDS */
+.hero-right{display:flex;gap:1rem;height:68vh;}
+.pcard{
+  flex:1;position:relative;overflow:hidden;cursor:pointer;
+  transition:flex .55s cubic-bezier(.25,.46,.45,.94);
+}
+.pcard.active{flex:1.6;}
+.pcard:nth-child(1){margin-top:1.5rem;}
+.pcard:nth-child(3){margin-top:3.5rem;}
+.pcard-bg{position:absolute;inset:0;transition:transform .6s ease;}
+.pcard:hover .pcard-bg{transform:scale(1.04);}
+.pcard-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(to top,rgba(0,0,0,.92) 0%,rgba(0,0,0,.25) 55%,transparent 100%);
+  display:flex;flex-direction:column;justify-content:flex-end;padding:1.4rem;
+}
+.pcard-num{font-size:.52rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:.35rem;}
+.pcard-title{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:400;line-height:1.2;margin-bottom:.4rem;}
+.pcard-desc{font-size:.68rem;line-height:1.65;color:rgba(255,255,255,.55);display:none;margin-bottom:.8rem;}
+.pcard.active .pcard-desc{display:block;}
+.pcard-link{
+  display:none;align-items:center;gap:.5rem;font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--gold);border:1px solid var(--gold);padding:.4rem .8rem;width:fit-content;
+  text-decoration:none;transition:all .3s;
+}
+.pcard-link:hover{background:var(--gold);color:var(--black);}
+.pcard.active .pcard-link{display:flex;}
+/* Card backgrounds */
+.bg1{background:linear-gradient(155deg,#1a0e04 0%,#3d2b0d 35%,#221608 65%,#0d0804 100%);}
+.bg1::after{content:'';position:absolute;inset:0;background:radial-gradient(circle at 40% 60%,rgba(200,169,110,.14) 0%,transparent 55%);}
+.bg2{background:linear-gradient(155deg,#06060f 0%,#0d0d28 35%,#181830 65%,#050507 100%);}
+.bg2::after{content:'';position:absolute;inset:0;background:radial-gradient(circle at 60% 40%,rgba(80,100,200,.09) 0%,transparent 55%);}
+.bg3{background:linear-gradient(155deg,#060a06 0%,#0e1a0e 35%,#182418 65%,#050707 100%);}
+.bg3::after{content:'';position:absolute;inset:0;background:radial-gradient(circle at 50% 50%,rgba(80,160,80,.07) 0%,transparent 55%);}
+
+/* card decoration icons */
+.card-deco{
+  position:absolute;top:50%;left:50%;transform:translate(-50%,-55%);
+  opacity:.05;pointer-events:none;
+}
+.card-deco svg{width:80px;height:80px;stroke:var(--white);fill:none;stroke-width:1;}
+
+/* SERVICES */
+.services{padding:7rem 4rem;border-bottom:1px solid var(--line2);}
+.section-hd{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:4.5rem;}
+.section-hd-note{max-width:22rem;text-align:right;font-size:.82rem;line-height:1.85;color:rgba(255,255,255,.4);margin-top:.5rem;}
+.srv-grid{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line2);border-bottom:1px solid var(--line2);margin:0 -4rem;}
+.srv-card{
+  padding:2.8rem;border-right:1px solid var(--line2);position:relative;overflow:hidden;
+  transition:background .4s;cursor:pointer;
+}
+.srv-card:last-child{border-right:none;}
+.srv-card::after{
+  content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:var(--gold);
+  transform:scaleX(0);transition:transform .4s;transform-origin:left;
+}
+.srv-card:hover::after{transform:scaleX(1);}
+.srv-card:hover{background:rgba(200,169,110,.04);}
+.srv-num{font-family:'Cormorant Garamond',serif;font-size:.72rem;letter-spacing:.2em;color:var(--gold);margin-bottom:1.8rem;}
+.srv-icon{width:2.2rem;height:2.2rem;color:var(--gold);margin-bottom:1.2rem;}
+.srv-title{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:400;margin-bottom:.8rem;}
+.srv-desc{font-size:.76rem;line-height:1.85;color:rgba(255,255,255,.45);margin-bottom:1.8rem;}
+.srv-arrow{font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);text-decoration:none;}
+.srv-arrow::after{content:' →';}
+
+/* MARQUEE */
+.marquee-section{
+  overflow:hidden;padding:1.3rem 0;
+  border-top:1px solid var(--line2);border-bottom:1px solid var(--line2);
+  background:var(--dark);
+}
+.marquee-track{display:flex;animation:marquee 30s linear infinite;white-space:nowrap;}
+.m-item{display:flex;align-items:center;gap:1.8rem;padding:0 1.8rem;}
+.m-text{font-size:.6rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.35);}
+.m-dot{width:4px;height:4px;background:var(--gold);border-radius:50%;flex-shrink:0;}
+@keyframes marquee{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+
+/* CAPACIDADES */
+.capacidades{padding:9rem 4rem;border-bottom:1px solid var(--line2);}
+.cap-hd{text-align:center;margin-bottom:6rem;}
+.cap-hd .label{margin-bottom:1.2rem;}
+.cap-cards{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;margin-bottom:1.2rem;}
+
+.cap-light{
+  padding:3.5rem;border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.018);
+  position:relative;overflow:hidden;
+}
+.cap-light::before{
+  content:'';position:absolute;inset:0;pointer-events:none;
+  background-image:
+    repeating-linear-gradient(90deg,transparent,transparent 39px,rgba(200,169,110,.04) 39px,rgba(200,169,110,.04) 40px);
+}
+.cap-dark{padding:3.5rem;background:var(--dark2);position:relative;}
+.cap-card-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:2.5rem;}
+.cap-tag{font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);}
+.cap-sub{font-size:.58rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.28);}
+.cap-title{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:400;line-height:1.1;margin-bottom:1.3rem;}
+.cap-desc{font-size:.77rem;line-height:1.88;color:rgba(255,255,255,.45);margin-bottom:1.8rem;}
+.cap-list{display:grid;grid-template-columns:1fr 1fr;gap:.65rem;list-style:none;}
+.cap-list li{display:flex;align-items:center;gap:.45rem;font-size:.72rem;color:rgba(255,255,255,.55);}
+.cap-list li::before{content:'■';font-size:.3rem;color:var(--gold);flex-shrink:0;}
+
+.img-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;}
+.img-card-wrap{display:flex;flex-direction:column;gap:1.2rem;}
+.img-card{position:relative;overflow:hidden;aspect-ratio:4/5;cursor:pointer;}
+.img-card-bg{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s ease;}
+.img-card:hover .img-card-bg{transform:scale(1.07);}
+.img-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(to top,rgba(0,0,0,.92) 0%,rgba(0,0,0,.3) 45%,transparent 100%);
+  display:flex;flex-direction:column;justify-content:flex-end;padding:1.8rem;
+}
+.img-area{font-size:.52rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.45);margin-bottom:.35rem;}
+.img-title{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:400;line-height:1.25;}
+.img-caption{font-size:.75rem;line-height:1.9;color:rgba(255,255,255,.42);}
+.img-caption p{margin-bottom:.7rem;}
+.img-caption p:last-child{margin-bottom:0;}
+
+/* PROCESSO */
+.processo{padding:9rem 4rem;border-bottom:1px solid var(--line2);}
+.proc-grid{display:grid;grid-template-columns:1fr 2fr;gap:7rem;align-items:start;}
+.proc-left .label{margin-bottom:1.5rem;}
+.proc-left p{margin-top:1.8rem;font-size:.77rem;line-height:1.88;color:rgba(255,255,255,.32);}
+.proc-steps{}
+.proc-step{
+  display:grid;grid-template-columns:3.5rem 1fr;gap:1.8rem;
+  padding:2.2rem 0;border-bottom:1px solid var(--line2);
+}
+.proc-step:first-child{border-top:1px solid var(--line2);}
+.step-n{font-family:'Cormorant Garamond',serif;font-size:.95rem;font-weight:300;color:var(--gold);letter-spacing:.1em;padding-top:.1rem;}
+.step-title{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:400;margin-bottom:.6rem;}
+.step-desc{font-size:.75rem;line-height:1.88;color:rgba(255,255,255,.38);}
+.step-tags{display:flex;gap:.45rem;margin-top:.9rem;flex-wrap:wrap;}
+.step-tag{font-size:.52rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.3);border:1px solid rgba(255,255,255,.08);padding:.28rem .55rem;}
+
+/* CTA */
+.cta-section{
+  padding:11rem 4rem;text-align:center;border-bottom:1px solid var(--line2);position:relative;
+}
+.cta-section::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse at center,rgba(200,169,110,.055) 0%,transparent 65%);
+  pointer-events:none;
+}
+.cta-section .label{margin-bottom:1.8rem;}
+.cta-section .display-lg{margin-bottom:1.8rem;}
+.cta-sub{font-size:.9rem;line-height:1.88;color:rgba(255,255,255,.4);max-width:38rem;margin:0 auto 3.5rem;}
+.cta-btns{display:flex;gap:1.2rem;justify-content:center;align-items:center;}
+
+/* CONTACT */
+.contact{padding:7rem 4rem;display:grid;grid-template-columns:1fr 1fr;gap:7rem;border-bottom:1px solid var(--line2);}
+.contact-left .label{margin-bottom:1.3rem;}
+.contact-info{margin-top:2.8rem;display:flex;flex-direction:column;gap:1.8rem;}
+.info-lbl{font-size:.52rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:.35rem;}
+.info-val{font-size:.82rem;color:rgba(255,255,255,.55);line-height:1.6;}
+.contact-form{display:flex;flex-direction:column;gap:1.4rem;}
+.fg{display:flex;flex-direction:column;gap:.45rem;}
+.fg2{display:grid;grid-template-columns:1fr 1fr;gap:1.4rem;}
+.flbl{font-size:.57rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.32);}
+.finput,.fsel,.ftxt{
+  background:transparent;border:none;border-bottom:1px solid rgba(255,255,255,.1);
+  padding:.65rem 0;color:var(--white);font-family:'Jost',sans-serif;font-size:.82rem;font-weight:300;
+  outline:none;transition:border-color .3s;width:100%;
+}
+.finput:focus,.fsel:focus,.ftxt:focus{border-bottom-color:var(--gold);}
+.fsel option{background:var(--dark);color:var(--white);}
+.ftxt{resize:none;height:5.5rem;}
+
+/* FOOTER */
+footer{padding:4rem;display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:3.5rem;border-bottom:1px solid var(--line2);justify-content:center;}
+.foot-brand-name{font-family:'Cormorant Garamond',serif;font-size:1.7rem;font-weight:300;letter-spacing:.05em;margin:1rem 0;}
+.foot-brand-name em{color:var(--gold);font-style:normal;}
+.foot-desc{font-size:.72rem;line-height:1.85;color:rgba(255,255,255,.3);}
+.foot-col-t{font-size:.57rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.25);margin-bottom:1.3rem;}
+.foot-links{list-style:none;display:flex;flex-direction:column;gap:.7rem;}
+.foot-links a{font-size:.77rem;color:rgba(255,255,255,.45);text-decoration:none;transition:color .3s;}
+.foot-links a:hover{color:var(--gold);}
+.footer-bot{padding:1.5rem 4rem;border-top:1px solid rgba(255,255,255,.06);}
+.footer-bot-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:.6rem;}
+.footer-bot-top p,.footer-bot-top a{font-size:.6rem;letter-spacing:.09em;color:rgba(255,255,255,.25);text-decoration:none;transition:color .3s;}
+.footer-bot-top a:hover{color:var(--gold);}
+.footer-bot-links{display:flex;gap:1.5rem;}
+.footer-bot-sub{font-size:.57rem;letter-spacing:.07em;color:rgba(255,255,255,.15);line-height:1.9;}
+
+/* ANIMATIONS */
+.fade-up{opacity:0;transform:translateY(36px);transition:opacity .75s ease,transform .75s ease;}
+.fade-up.vis{opacity:1;transform:translateY(0);}
+.fade-in{opacity:0;transition:opacity .9s ease;}
+.fade-in.vis{opacity:1;}
+.d1{transition-delay:.1s;}.d2{transition-delay:.2s;}.d3{transition-delay:.3s;}.d4{transition-delay:.4s;}.d5{transition-delay:.5s;}
+
+/* EQUIPE */
+.equipe{padding:9rem 4rem;border-bottom:1px solid var(--line2);}
+.equipe-hd{text-align:center;margin-bottom:5.5rem;}
+.equipe-hd .label{margin-bottom:1.2rem;}
+.equipe-sub{margin-top:1.5rem;font-size:.82rem;color:rgba(255,255,255,.35);max-width:28rem;margin-left:auto;margin-right:auto;line-height:1.88;}
+.equipe-grid{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line2);border-bottom:1px solid var(--line2);margin:0 -4rem;}
+.adv-card{
+  padding:3.5rem 3rem;border-right:1px solid var(--line2);
+  position:relative;overflow:hidden;display:flex;flex-direction:column;align-items:center;
+  transition:background .4s;
+}
+.adv-card:last-child{border-right:none;}
+.adv-card:hover{background:rgba(200,169,110,.03);}
+.adv-card::after{
+  content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:var(--gold);
+  transform:scaleX(0);transition:transform .5s;transform-origin:left;
+}
+.adv-card:hover::after{transform:scaleX(1);}
+.adv-photo-wrap{
+  width:130px;height:130px;border-radius:50%;
+  border:1px solid var(--gold-d);
+  margin-bottom:2rem;position:relative;overflow:hidden;
+  transition:border-color .4s;
+  background:var(--black);
+}
+.adv-card:hover .adv-photo-wrap{border-color:var(--gold);box-shadow:0 0 18px rgba(200,169,110,.1);}
+.adv-photo-wrap img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block;transform:scale(2);transform-origin:center top;}
+.adv-initials{
+  width:100%;height:100%;display:flex;align-items:center;justify-content:center;
+  font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-weight:300;
+  color:var(--gold-d);letter-spacing:.05em;
+}
+.adv-name{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:400;text-align:center;line-height:1.2;margin-bottom:.45rem;}
+.adv-oab{font-size:.57rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);text-align:center;margin-bottom:1.5rem;}
+.adv-line{width:1.6rem;height:1px;background:rgba(200,169,110,.3);margin:0 auto 1.5rem;}
+.adv-desc{font-size:.74rem;line-height:1.9;color:rgba(255,255,255,.38);text-align:center;margin-bottom:2rem;flex:1;}
+.adv-cta{
+  display:inline-flex;align-items:center;gap:.55rem;
+  font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--white);border:1px solid rgba(255,255,255,.12);
+  padding:.55rem 1.2rem;text-decoration:none;
+  transition:border-color .3s,color .3s;
+}
+.adv-cta:hover{border-color:var(--gold);color:var(--gold);}
+
+/* VIDEO REELS */
+.video-section{padding:8rem 4rem;border-bottom:1px solid var(--line2);display:flex;align-items:center;gap:7rem;}
+.video-reel-outer{flex-shrink:0;position:relative;}
+.video-phone-frame{
+  width:260px;height:462px;
+  border-radius:36px;
+  background:#0f0f0f;
+  border:2px solid rgba(200,169,110,.3);
+  box-shadow:0 0 0 6px rgba(200,169,110,.06),0 32px 80px rgba(0,0,0,.7);
+  overflow:hidden;
+  position:relative;
+}
+.video-phone-frame::before{
+  content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);
+  width:70px;height:5px;background:rgba(200,169,110,.2);
+  border-radius:0 0 4px 4px;z-index:2;
+}
+.video-phone-frame video{width:100%;height:100%;object-fit:cover;display:block;cursor:pointer;}
+.video-play-icon{
+  position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+  width:56px;height:56px;border-radius:50%;
+  background:rgba(200,169,110,.85);
+  display:flex;align-items:center;justify-content:center;
+  pointer-events:none;z-index:3;
+  transition:opacity .3s,transform .3s;
+}
+.video-play-icon::after{
+  content:'';display:block;
+  border-style:solid;border-color:transparent transparent transparent #000;
+  border-width:10px 0 10px 18px;
+  margin-left:3px;
+}
+.video-phone-frame.playing .video-play-icon{opacity:0;transform:translate(-50%,-50%) scale(0.7);}
+.video-badge{
+  position:absolute;bottom:-16px;left:50%;transform:translateX(-50%);
+  background:var(--gold);color:#000;
+  font-size:.52rem;letter-spacing:.14em;text-transform:uppercase;
+  padding:.35rem .9rem;white-space:nowrap;
+}
+.video-content{flex:1;}
+.video-content .label{margin-bottom:1.4rem;}
+.video-body{margin-top:2rem;}
+.video-body p{font-size:.8rem;line-height:2;color:rgba(255,255,255,.48);margin-bottom:1.1rem;}
+.video-body p:first-child{font-family:'Cormorant Garamond',serif;font-size:1.1rem;color:rgba(255,255,255,.72);font-style:italic;line-height:1.75;}
+.video-body strong{color:rgba(255,255,255,.75);}
+.video-cta-line{
+  margin-top:2.2rem;padding-top:2rem;border-top:1px solid rgba(200,169,110,.15);
+  font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--gold);display:flex;align-items:center;gap:.8rem;
+}
+.video-cta-line::before{content:'';display:block;width:2rem;height:1px;background:var(--gold);}
+
+/* DEPOIMENTOS */
+.dep-section{padding:8rem 4rem;border-bottom:1px solid var(--line2);}
+.dep-hd{text-align:center;margin-bottom:4rem;}
+.dep-hd .label{margin-bottom:1.2rem;}
+.dep-rating{display:flex;align-items:center;justify-content:center;gap:.7rem;margin:1.5rem 0 .6rem;}
+.dep-stars-big{color:#FBBC04;font-size:1.3rem;letter-spacing:.12em;}
+.dep-rating-num{font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:300;color:var(--white);}
+.dep-rating-ct{font-size:.72rem;color:rgba(255,255,255,.35);letter-spacing:.06em;}
+.google-logo{display:flex;align-items:center;justify-content:center;gap:.3rem;margin:.6rem 0 0;font-size:1rem;font-weight:600;letter-spacing:-.02em;}
+.g-b{color:#4285F4;}.g-r{color:#EA4335;}.g-y{color:#FBBC04;}.g-g{color:#34A853;}
+.dep-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;border:1px solid rgba(255,255,255,.07);margin:0 -4rem;}
+.dep-card{
+  padding:2.5rem 2.2rem;position:relative;overflow:hidden;
+  background:rgba(255,255,255,.015);
+  border-right:1px solid rgba(255,255,255,.07);
+  transition:background .4s;
+}
+.dep-card:nth-child(3n){border-right:none;}
+.dep-card:nth-child(n+4){border-top:1px solid rgba(255,255,255,.07);}
+.dep-card:hover{background:rgba(200,169,110,.04);}
+.dep-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:var(--gold);transform:scaleX(0);transition:transform .5s;transform-origin:left;}
+.dep-card:hover::after{transform:scaleX(1);}
+.dep-card-hd{display:flex;align-items:center;gap:.9rem;margin-bottom:1.3rem;}
+.dep-av{width:44px;height:44px;border-radius:50%;background:rgba(200,169,110,.1);border:1px solid rgba(200,169,110,.25);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.dep-av span{font-family:'Cormorant Garamond',serif;font-size:1.05rem;color:var(--gold);font-weight:400;letter-spacing:.04em;}
+.dep-name{font-family:'Cormorant Garamond',serif;font-size:1rem;font-weight:500;color:var(--white);line-height:1.2;}
+.dep-meta{display:flex;align-items:center;gap:.5rem;margin-top:.25rem;}
+.dep-strs{color:#FBBC04;font-size:.6rem;letter-spacing:.05em;}
+.dep-date{font-size:.58rem;color:rgba(255,255,255,.28);letter-spacing:.08em;text-transform:uppercase;}
+.dep-text{font-size:.76rem;line-height:2;color:rgba(255,255,255,.45);font-style:italic;}
+.dep-qmark{position:absolute;top:1.5rem;right:1.8rem;font-family:'Cormorant Garamond',serif;font-size:4rem;line-height:1;color:rgba(200,169,110,.06);pointer-events:none;}
+.dep-firm{
+  margin:4.5rem auto 0;max-width:660px;text-align:center;
+  padding:2.5rem 3rem;border:1px solid rgba(200,169,110,.18);
+  background:rgba(200,169,110,.03);position:relative;
+}
+.dep-firm::before,.dep-firm::after{
+  content:'';position:absolute;
+  width:12px;height:12px;border-color:var(--gold);border-style:solid;
+}
+.dep-firm::before{top:-1px;left:-1px;border-width:1px 0 0 1px;}
+.dep-firm::after{bottom:-1px;right:-1px;border-width:0 1px 1px 0;}
+.dep-firm p{font-size:.82rem;line-height:2;color:rgba(255,255,255,.48);letter-spacing:.02em;}
+.dep-firm strong{color:var(--gold);font-weight:500;}
+
+/* HERO CORNER QUOTE */
+.hero-corner{position:absolute;top:8.5rem;right:4rem;text-align:right;}
+.hero-dots{display:flex;gap:.35rem;justify-content:flex-end;margin-bottom:.7rem;}
+.hd-big{width:8px;height:8px;background:var(--gold);}
+.hd-sm{width:5px;height:5px;background:rgba(200,169,110,.38);margin-top:1.5px;}
+.hero-quote{font-size:.68rem;line-height:1.75;color:rgba(255,255,255,.32);max-width:15rem;}
+</style>
+</head>
+<body>
+
+<div class="grid-bg"></div>
+<div class="cursor-glow" id="glow"></div>
+
+<!-- NAV -->
+<nav id="navbar">
+  <div class="nav-logo-wrap"><img src="data:image/jpeg;base64,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" class="nav-logo-img" alt="João de Carvalho &amp; Pêgo Advocacia"></div>
+<a href="#contato" class="nav-cta">Consulta Gratuita</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="hero-corner">
+    <div class="hero-dots"><div class="hd-big"></div><div class="hd-big"></div><div class="hd-sm"></div></div>
+    <p class="hero-quote">O trabalhador acidentado não deve lutar sozinho. A lei está do seu lado — e nós também.</p>
+  </div>
+
+  <div class="hero-left">
+    <div class="hero-logo fade-up" style="display:inline-block;margin-bottom:2rem;"><img style="filter:invert(1);" src="data:image/jpeg;base64,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" style="height:42px;display:block;" alt="João de Carvalho &amp; Pêgo Advocacia"></div>
+    <div class="hero-tag fade-up">
+      <div class="hero-tag-bar"></div>
+      <span class="label">Especialistas em Acidentes de Trabalho</span>
+    </div>
+    <div class="hero-title fade-up d1">
+      <h1 class="display-xl">ACIDENTE<br>DE TRABALHO?<br>VOCÊ TEM<br><em>DIREITOS.</em></h1>
+    </div>
+    <p class="hero-desc fade-up d2">Somos especializados em defender trabalhadores vítimas de acidentes e doenças ocupacionais. Seu caso recebe atenção total — da perícia até a indenização final.</p>
+    <div class="hero-cta-row fade-up d3">
+      <a href="#contato" class="btn-white">Consultar Agora <span>→</span></a>
+      <div class="hero-areas">
+        <span>Acidente Típico</span>
+        <span>Doença Ocupacional</span>
+        <span>Indenização Civil</span>
+      </div>
+    </div>
+    <div class="hero-stats fade-up d4">
+      <div class="stat-item">
+        <div class="stat-num" data-count="500" data-suffix="+">0+</div>
+        <div class="stat-lbl">Casos Resolvidos</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num" data-count="11" data-suffix=" anos">0</div>
+        <div class="stat-lbl">Mais de 11 Anos de Experiência</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num" data-count="95" data-suffix="%">0%</div>
+        <div class="stat-lbl">Taxa de Êxito</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-right fade-in d2">
+    <div class="pcard active" data-area="prev">
+      <div class="pcard-bg bg1">
+        <div class="card-deco">
+          <svg viewBox="0 0 60 60"><path d="M30 5 L30 55M10 20 Q30 10 50 20M10 40 Q30 50 50 40M5 30 L55 30"/></svg>
+        </div>
+      </div>
+      <div class="pcard-overlay">
+        <div class="pcard-num">01 / ACIDENTE TÍPICO</div>
+        <div class="pcard-title">Acidente no<br>Local de Trabalho</div>
+        <div class="pcard-desc">Queda, esmagamento, choque elétrico, explosão — qualquer evento súbito. Garantimos benefícios e indenização.</div>
+      </div>
+    </div>
+    <div class="pcard" data-area="trab">
+      <div class="pcard-bg bg2">
+        <div class="card-deco">
+          <svg viewBox="0 0 60 60"><rect x="10" y="25" width="40" height="25" rx="1"/><path d="M20 25 V18 Q20 10 30 10 Q40 10 40 18 V25"/></svg>
+        </div>
+      </div>
+      <div class="pcard-overlay">
+        <div class="pcard-num">02 / DOENÇA OCUPACIONAL</div>
+        <div class="pcard-title">Doença Causada<br>pelo Trabalho</div>
+        <div class="pcard-desc">LER, DORT, perda auditiva, doenças respiratórias. Provamos o nexo causal e garantimos seus direitos.</div>
+      </div>
+    </div>
+    <div class="pcard" data-area="civ">
+      <div class="pcard-bg bg3">
+        <div class="card-deco">
+          <svg viewBox="0 0 60 60"><line x1="30" y1="5" x2="30" y2="55"/><line x1="10" y1="15" x2="50" y2="15"/><path d="M12 15 L22 35 L2 35 Z"/><path d="M38 15 L48 35 L28 35 Z"/></svg>
+        </div>
+      </div>
+      <div class="pcard-overlay">
+        <div class="pcard-num">03 / INDENIZAÇÃO CIVIL</div>
+        <div class="pcard-title">Responsabilidade<br>do Empregador</div>
+        <div class="pcard-desc">Além dos benefícios do INSS, o empregador responde por danos morais, materiais, estéticos e pensão vitalícia.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="servicos">
+  <div class="section-hd">
+    <div>
+      <div class="label fade-up" style="margin-bottom:1.2rem">/ Nossa Abordagem /</div>
+      <h2 class="display-lg fade-up d1">COMO<br>TRABALHAMOS</h2>
+    </div>
+    <p class="section-hd-note fade-up d2">Acidentes de trabalho exigem ação rápida e especializada. Cada hora conta — e cada detalhe do seu caso importa.</p>
+  </div>
+  <div class="srv-grid">
+    <div class="srv-card fade-up">
+      <div class="srv-num">01 / DIAGNÓSTICO</div>
+      <svg class="srv-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      <div class="srv-title">Análise do Acidente</div>
+      <p class="srv-desc">Examinamos CAT, laudos médicos, condições do local e histórico de saúde para construir um caso sólido e irrefutável desde o primeiro momento.</p>
+      <a href="#contato" class="srv-arrow">Iniciar Análise</a>
+    </div>
+    <div class="srv-card fade-up d2">
+      <div class="srv-num">02 / BENEFÍCIOS</div>
+      <svg class="srv-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+      <div class="srv-title">Direitos junto ao INSS</div>
+      <p class="srv-desc">Garantimos a concessão do auxílio acidentário (B91), auxílio por incapacidade e aposentadoria por invalidez. Benefício negado é benefício que recorremos.</p>
+      <a href="#contato" class="srv-arrow">Saiba Mais</a>
+    </div>
+    <div class="srv-card fade-up d3">
+      <div class="srv-num">03 / INDENIZAÇÃO</div>
+      <svg class="srv-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><polyline points="20 6 9 17 4 12"/></svg>
+      <div class="srv-title">Ação contra o Empregador</div>
+      <p class="srv-desc">Quando há culpa do empregador, acionamos a Justiça por danos morais, materiais, estéticos e pensão vitalícia. Você recebe o que a lei garante.</p>
+      <a href="#contato" class="srv-arrow">Saiba Mais</a>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-section">
+  <div class="marquee-track">
+    <div class="m-item"><span class="m-text">ACIDENTE DE TRABALHO</span><div class="m-dot"></div></div>
+    <div class="m-item"><span class="m-text">AUXÍLIO ACIDENTÁRIO</span><div class="m-dot"></div></div>
+    <div class="m-item"><span class="m-text">DOENÇA OCUPACIONAL</span><div class="m-dot"></div></div>
+    <div class="m-item"><span class="m-text">INDENIZAÇÃO CIVIL</span><div class="m-dot"></div></div>
+    <div class="m-item"><span class="m-text">NEXO CAUSAL</span><div class="m-dot"></div></div>
+    <div class="m-item"><span class="m-text">APOSENTADORIA POR INVALIDEZ</span><div class="m-dot"></div></div>
+    <div class="m-item"><span class="m-text">LER / DORT</span><div class="m-dot"></div></div>
+    <div class="m-item"><span class="m-text">RESPONSABILIDADE DO EMPREGADOR</span><div class="m-dot"></div></div>
+    <div class="m-item"><span class="m-text">DANOS MORAIS E MATERIAIS</span><div class="m-dot"></div></div>
+    <div class="m-item"><span class="m-text">PERÍCIA MÉDICA</span><div class="m-dot"></div></div>
+    <div class="m-item"><span class="m-text">COMUNICAÇÃO DE ACIDENTE (CAT)</span><div class="m-dot"></div></div>
+    <div class="m-item"><span class="m-text">PENSÃO VITALÍCIA</span><div class="m-dot"></div></div>
+    <div class="m-item"><span class="m-text">ACIDENTE DE TRABALHO</span><div class="m-dot"></div></div>
+    <div class="m-item"><span class="m-text">AUXÍLIO ACIDENTÁRIO</span><div class="m-dot"></div></div>
+    <div class="m-item"><span class="m-text">DOENÇA OCUPACIONAL</span><div class="m-dot"></div></div>
+    <div class="m-item"><span class="m-text">INDENIZAÇÃO CIVIL</span><div class="m-dot"></div></div>
+    <div class="m-item"><span class="m-text">NEXO CAUSAL</span><div class="m-dot"></div></div>
+    <div class="m-item"><span class="m-text">APOSENTADORIA POR INVALIDEZ</span><div class="m-dot"></div></div>
+    <div class="m-item"><span class="m-text">LER / DORT</span><div class="m-dot"></div></div>
+    <div class="m-item"><span class="m-text">RESPONSABILIDADE DO EMPREGADOR</span><div class="m-dot"></div></div>
+    <div class="m-item"><span class="m-text">DANOS MORAIS E MATERIAIS</span><div class="m-dot"></div></div>
+    <div class="m-item"><span class="m-text">PERÍCIA MÉDICA</span><div class="m-dot"></div></div>
+  </div>
+</div>
+
+<!-- ÁREAS / CAPACIDADES -->
+<section class="capacidades" id="areas">
+  <div class="cap-hd">
+    <div class="label fade-up">/ Capacidades /</div>
+    <h2 class="display-lg fade-up d1" style="margin-top:1.2rem">DEFESA COMPLETA PARA<br><em>VÍTIMAS DE ACIDENTE</em></h2>
+  </div>
+
+  <div class="cap-cards">
+    <div class="cap-light fade-up">
+      <div class="cap-card-top">
+        <span class="cap-tag">01 / BENEFÍCIOS INSS</span>
+        <span class="cap-sub">Direito Acidentário</span>
+      </div>
+      <h3 class="cap-title">Benefícios pelo Acidente</h3>
+      <p class="cap-desc">O acidente de trabalho gera direitos junto ao INSS que vão além do simples afastamento. Lutamos pelo benefício correto, com a classificação correta, pelo tempo que você merece.</p>
+      <ul class="cap-list">
+        <li>Auxílio acidentário (B91)</li><li>Auxílio por incapacidade (B31)</li>
+        <li>Aposentadoria por invalidez</li><li>Benefício negado — recurso</li>
+        <li>Restabelecimento de benefício</li><li>Nexo causal e perícia</li>
+      </ul>
+    </div>
+    <div class="cap-dark fade-up d2">
+      <div class="cap-card-top">
+        <span class="cap-tag">02 / RESPONSABILIDADE CIVIL</span>
+        <span class="cap-sub">Ação contra o Empregador</span>
+      </div>
+      <h3 class="cap-title">Indenização do Empregador</h3>
+      <p class="cap-desc">Quando o acidente decorre de negligência ou imprudência do empregador, ele responde civilmente. Calculamos e exigimos cada parcela de indenização que a lei garante ao trabalhador.</p>
+      <ul class="cap-list">
+        <li>Danos materiais</li><li>Danos morais</li>
+        <li>Danos estéticos</li><li>Pensão mensal vitalícia</li>
+        <li>Lucros cessantes</li><li>Reabilitação profissional</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="img-grid fade-up d1">
+    <div class="img-card-wrap">
+      <div class="img-card">
+        <img class="img-card-bg" src="clientes/j c p advocacia/fotos/Captura de tela 2026-06-20 215119.png" alt="Foto 1" style="object-position: 65% center;">
+        <div class="img-overlay">
+          <div class="img-area">Nexo Causal</div>
+          <div class="img-title">Prova da Origem<br>Ocupacional</div>
+        </div>
+      </div>
+      <div class="img-caption">
+        <p>Você trabalha em um ambiente com calor excessivo, produtos químicos, barulho intenso ou risco constante de acidentes?</p>
+        <p>Muitos trabalhadores têm direitos que sequer sabem que existem.</p>
+        <p>Em diversos casos, é possível ter direito a adicionais, indenizações ou outras verbas relacionadas às condições de trabalho. O problema é que muita gente passa anos sem buscar orientação e acaba deixando esses direitos para trás.</p>
+        <p>Cada situação precisa ser analisada individualmente, mas uma coisa é certa: informação é o primeiro passo para garantir seus direitos.</p>
+        <p>Se você tem dúvidas sobre o seu caso, entre em contato com nosso escritório. Nossa equipe pode analisar sua situação e orientar você sobre os próximos passos.</p>
+      </div>
+    </div>
+    <div class="img-card-wrap">
+      <div class="img-card">
+        <img class="img-card-bg" src="clientes/j c p advocacia/fotos/Captura de tela 2026-06-20 215153.png" alt="Foto 2">
+        <div class="img-overlay">
+          <div class="img-area">CAT & Perícia</div>
+          <div class="img-title">Documentação<br>& Laudos Médicos</div>
+        </div>
+      </div>
+      <div class="img-caption">
+        <p>Há mais de 11 anos, nosso escritório se consolidou como referência no mercado jurídico, sempre com credibilidade, expertise e um atendimento humanizado.</p>
+        <p>Estamos prontos para ouvir, acolher e oferecer soluções claras e eficazes em Direito Previdenciário e Trabalhista.</p>
+        <p>Sua confiança é a nossa maior conquista. Conte conosco para trilhar o caminho certo rumo à justiça e cidadania.</p>
+      </div>
+    </div>
+    <div class="img-card-wrap">
+      <div class="img-card">
+        <img class="img-card-bg" src="clientes/j c p advocacia/fotos/Captura de tela 2026-06-20 215229.png" alt="Foto 3">
+        <div class="img-overlay">
+          <div class="img-area">Reabilitação</div>
+          <div class="img-title">Retorno ao Trabalho<br>& Pensão Vitalícia</div>
+        </div>
+      </div>
+      <div class="img-caption">
+        <p>Pedir demissão não é tão simples quanto parece.</p>
+        <p>Muita gente acha que vai sair sem receber nada… mas também tem gente que perde dinheiro por não entender seus direitos.</p>
+        <p>Você pode sim receber valores — mas também pode deixar dinheiro na mesa se fizer errado.</p>
+        <p>E tem um detalhe que quase ninguém te conta: o aviso prévio pode impactar diretamente no que você vai receber.</p>
+        <p>Antes de tomar qualquer decisão, entenda tudo com clareza. Isso pode evitar um prejuízo grande.</p>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<!-- PROCESSO -->
+<section class="processo" id="processo">
+  <div class="proc-grid">
+    <div class="proc-left">
+      <div class="label fade-up">/ Metodologia /</div>
+      <h2 class="display-lg fade-up d1">COMO<br>ATUAMOS<br><em>EM CADA<br>CASO</em></h2>
+      <p class="fade-up d2">Seguimos um processo rigoroso que transforma o acidente em direitos reconhecidos e indenizações garantidas.</p>
+    </div>
+    <div class="proc-steps">
+      <div class="proc-step fade-up">
+        <div class="step-n">01</div>
+        <div>
+          <div class="step-title">Análise do Acidente e Documentação</div>
+          <p class="step-desc">Examinamos a CAT, laudos médicos, condições do trabalho e histórico de saúde. Identificamos o nexo causal, o tipo de benefício cabível e a base para ação civil.</p>
+          <div class="step-tags"><span class="step-tag">Análise da CAT</span><span class="step-tag">Nexo causal</span><span class="step-tag">Laudos e perícias</span></div>
+        </div>
+      </div>
+      <div class="proc-step fade-up d1">
+        <div class="step-n">02</div>
+        <div>
+          <div class="step-title">Ação junto ao INSS</div>
+          <p class="step-desc">Requeremos ou contestamos benefícios acidentários. Acompanhamos a perícia médica, impugnamos laudos desfavoráveis e entramos com ação judicial quando necessário.</p>
+          <div class="step-tags"><span class="step-tag">Pedido de benefício</span><span class="step-tag">Recurso administrativo</span><span class="step-tag">Ação judicial INSS</span></div>
+        </div>
+      </div>
+      <div class="proc-step fade-up d2">
+        <div class="step-n">03</div>
+        <div>
+          <div class="step-title">Ação Civil contra o Empregador</div>
+          <p class="step-desc">Quando há culpa do empregador, abrimos ação na Justiça do Trabalho exigindo indenização por danos morais, materiais, estéticos e pensão vitalícia proporcional à incapacidade.</p>
+          <div class="step-tags"><span class="step-tag">Ação trabalhista</span><span class="step-tag">Danos morais</span><span class="step-tag">Pensão vitalícia</span></div>
+        </div>
+      </div>
+      <div class="proc-step fade-up d3">
+        <div class="step-n">04</div>
+        <div>
+          <div class="step-title">Execução e Recebimento</div>
+          <p class="step-desc">Garantimos que você receba efetivamente cada valor reconhecido pelo juiz. Acompanhamos cálculos, penhoras e pagamentos até o depósito final na sua conta.</p>
+          <div class="step-tags"><span class="step-tag">Cumprimento de sentença</span><span class="step-tag">Cálculo de valores</span><span class="step-tag">Recebimento garantido</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EQUIPE -->
+<section class="equipe" id="equipe">
+  <div class="equipe-hd">
+    <div class="label fade-up">/ A Equipe /</div>
+    <h2 class="display-lg fade-up d1" style="margin-top:1.2rem">QUEM DEFENDE<br><em>O SEU CASO</em></h2>
+    <p class="equipe-sub fade-up d2">Uma equipe dedicada exclusivamente a acidentes de trabalho, com resultados comprovados e atuação especializada.</p>
+  </div>
+  <div class="equipe-grid">
+
+    <div class="adv-card fade-up">
+      <div class="adv-photo-wrap">
+        <img src="clientes/j c p advocacia/fotos doutores/joão.png" alt="Dr. João Filipe de Carvalho" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="adv-initials" style="display:none">JC</div>
+      </div>
+      <div class="adv-name">Dr. João Filipe<br>de Carvalho</div>
+      <div class="adv-oab">OAB/DF 34.220</div>
+      <div class="adv-line"></div>
+      <p class="adv-desc">Especialista em Estratégia Jurídica e causas complexas. Mais de 3.000 atendimentos especializados em acidentes de trabalho.</p>
+      <a href="#contato" class="adv-cta">Falar com João →</a>
+    </div>
+
+    <div class="adv-card fade-up d2">
+      <div class="adv-photo-wrap">
+        <img src="clientes/j c p advocacia/fotos doutores/laura.png" alt="Dra. Laura Lopes" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="adv-initials" style="display:none">LL</div>
+      </div>
+      <div class="adv-name">Dra. Laura<br>Lopes</div>
+      <div class="adv-oab">OAB/DF 68.408</div>
+      <div class="adv-line"></div>
+      <p class="adv-desc">Especialista em atendimento humanizado e acompanhamento processual personalizado para vítimas de acidentes.</p>
+      <a href="#contato" class="adv-cta">Falar com Laura →</a>
+    </div>
+
+    <div class="adv-card fade-up d3">
+      <div class="adv-photo-wrap">
+        <img src="clientes/j c p advocacia/fotos doutores/yasmim.png" alt="Dra. Yasmim Estevam de Melo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="adv-initials" style="display:none">YM</div>
+      </div>
+      <div class="adv-name">Dra. Yasmim<br>Estevam de Melo</div>
+      <div class="adv-oab">OAB/DF 78.779</div>
+      <div class="adv-line"></div>
+      <p class="adv-desc">Especialista em Direito Trabalhista com atuação focada em defesa de trabalhadores acidentados e processos de alta complexidade.</p>
+      <a href="#contato" class="adv-cta">Falar com Yasmim →</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- VIDEO REELS -->
+<section class="video-section">
+  <div class="video-reel-outer fade-up">
+    <div class="video-phone-frame" id="reelFrame">
+      <video id="reelVideo" loop playsinline>
+        <source src="clientes/j c p advocacia/vídeos/vídeo trabalhista.mp4" type="video/mp4">
+      </video>
+      <div class="video-play-icon"></div>
+    </div>
+    <div class="video-badge">Reel · JCP Advocacia</div>
+  </div>
+
+  <div class="video-content fade-up d2">
+    <div class="label">/ Conteúdo Jurídico /</div>
+    <div class="video-body">
+      <p>A empresa comprou um remédio para você? Respeitou seu atestado? Pagou uma consulta médica?</p>
+      <p>Isso pode ser importante, mas <strong>não significa que todos os seus direitos foram garantidos.</strong></p>
+      <p>Quando uma doença ou acidente está relacionado ao trabalho, podem existir outros direitos envolvidos, como <strong>benefícios previdenciários, estabilidade no emprego, indenizações</strong> e outras garantias previstas em lei.</p>
+      <p>Cada caso precisa ser analisado individualmente, mas uma coisa é certa: <strong>você não deve abrir mão dos seus direitos por falta de informação.</strong></p>
+      <p>Se você está passando por uma situação parecida, entre em contato com o <strong>João de Carvalho & Pêgo Advocacia.</strong> Nossa equipe está pronta para analisar seu caso e orientar você da melhor forma.</p>
+    </div>
+    <div class="video-cta-line">
+      📲 Fale conosco e esclareça suas dúvidas
+    </div>
+    <a href="tel:+5561998680320" style="display:inline-flex;align-items:center;gap:.7rem;margin-top:1.2rem;font-size:.85rem;letter-spacing:.08em;color:var(--gold);text-decoration:none;transition:opacity .3s;" onmouseover="this.style.opacity='.7'" onmouseout="this.style.opacity='1'">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.41 2 2 0 0 1 3.6 1.24h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.82a16 16 0 0 0 6 6l.86-.86a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.73 16z"/></svg>
+      (61) 99868-0320
+    </a>
+  </div>
+</section>
+
+<!-- DEPOIMENTOS -->
+<section class="dep-section" id="depoimentos">
+  <div class="dep-hd fade-up">
+    <div class="label">/ Avaliações /</div>
+    <h2 class="display-lg" style="margin-top:1.2rem">O QUE NOSSOS<br><em>CLIENTES DIZEM</em></h2>
+    <div class="dep-rating">
+      <span class="dep-stars-big">★★★★★</span>
+      <span class="dep-rating-num">4,8</span>
+      <span class="dep-rating-ct">(46 avaliações no Google)</span>
+    </div>
+    <div class="google-logo">
+      <span class="g-b">G</span><span class="g-r">o</span><span class="g-y">o</span><span class="g-b">g</span><span class="g-g">l</span><span class="g-r">e</span>
+    </div>
+  </div>
+
+  <div class="dep-grid">
+
+    <div class="dep-card fade-up">
+      <div class="dep-qmark">"</div>
+      <div class="dep-card-hd">
+        <div class="dep-av"><span>MS</span></div>
+        <div>
+          <div class="dep-name">Maria Silva</div>
+          <div class="dep-meta"><span class="dep-strs">★★★★★</span><span class="dep-date">3 meses atrás</span></div>
+        </div>
+      </div>
+      <p class="dep-text">"Excelente atendimento! Dr. João me ajudou em um caso de acidente de trabalho muito complexo. Consegui todos os meus direitos no INSS e ainda uma indenização da empresa. Recomendo muito!"</p>
+    </div>
+
+    <div class="dep-card fade-up d1">
+      <div class="dep-qmark">"</div>
+      <div class="dep-card-hd">
+        <div class="dep-av"><span>CS</span></div>
+        <div>
+          <div class="dep-name">Carlos Santos</div>
+          <div class="dep-meta"><span class="dep-strs">★★★★★</span><span class="dep-date">2 meses atrás</span></div>
+        </div>
+      </div>
+      <p class="dep-text">"Dr. Ricardo é um profissional excepcional. Me orientou em cada etapa do processo de auxílio-doença acidentário. Atendimento humanizado e muito eficiente. Nota 10!"</p>
+    </div>
+
+    <div class="dep-card fade-up d2">
+      <div class="dep-qmark">"</div>
+      <div class="dep-card-hd">
+        <div class="dep-av"><span>AO</span></div>
+        <div>
+          <div class="dep-name">Ana Paula Oliveira</div>
+          <div class="dep-meta"><span class="dep-strs">★★★★★</span><span class="dep-date">1 mês atrás</span></div>
+        </div>
+      </div>
+      <p class="dep-text">"Dra. Laura foi fundamental no meu caso de LER/DORT. Me explicou todos os meus direitos e conseguiu a aposentadoria por invalidez. Equipe muito competente!"</p>
+    </div>
+
+    <div class="dep-card fade-up d1">
+      <div class="dep-qmark">"</div>
+      <div class="dep-card-hd">
+        <div class="dep-av"><span>RL</span></div>
+        <div>
+          <div class="dep-name">Roberto Lima</div>
+          <div class="dep-meta"><span class="dep-strs">★★★★★</span><span class="dep-date">4 semanas atrás</span></div>
+        </div>
+      </div>
+      <p class="dep-text">"Escritório especializado e experiente. Conseguiram reverter uma negativa do INSS que eu tentava há anos. Atendimento rápido pelo WhatsApp. Super recomendo!"</p>
+    </div>
+
+    <div class="dep-card fade-up d2">
+      <div class="dep-qmark">"</div>
+      <div class="dep-card-hd">
+        <div class="dep-av"><span>FC</span></div>
+        <div>
+          <div class="dep-name">Fernanda Costa</div>
+          <div class="dep-meta"><span class="dep-strs">★★★★★</span><span class="dep-date">2 semanas atrás</span></div>
+        </div>
+      </div>
+      <p class="dep-text">"Profissionais sérios e comprometidos. Me ajudaram após acidente de trajeto. Consegui estabilidade no emprego e todos os benefícios. Muito obrigada!"</p>
+    </div>
+
+    <div class="dep-card fade-up d3">
+      <div class="dep-qmark">"</div>
+      <div class="dep-card-hd">
+        <div class="dep-av"><span>JF</span></div>
+        <div>
+          <div class="dep-name">José Ferreira</div>
+          <div class="dep-meta"><span class="dep-strs">★★★★★</span><span class="dep-date">1 semana atrás</span></div>
+        </div>
+      </div>
+      <p class="dep-text">"Excelente experiência! Caso resolvido com sucesso. Dr. João sempre muito atencioso e disponível. Realmente especialistas em acidente de trabalho."</p>
+    </div>
+
+  </div>
+
+  <div class="dep-firm fade-up">
+    <p><strong>Escritório 100% especializado em acidentes de trabalho,</strong> com mais de <strong>95% de taxa de sucesso</strong>. Oferecemos defesa jurídica completa e atendimento humanizado.</p>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="label fade-up">/ Vamos Conversar /</div>
+  <h2 class="display-lg fade-up d1" style="margin-top:1.5rem">SEU ACIDENTE NÃO PODE<br><em>FICAR SEM RESPOSTA</em></h2>
+  <p class="cta-sub fade-up d2">A consulta inicial é gratuita. Em 30 minutos você saberá quais benefícios tem direito, se pode processar o empregador e quanto pode receber de indenização.</p>
+  <div class="cta-btns fade-up d3">
+    <a href="#contato" class="btn-gold">Agendar Consulta Gratuita →</a>
+    <a href="tel:+5561998680320" class="btn-outline">Ligar Agora</a>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contato">
+  <div class="contact-left">
+    <div class="label fade-up">/ Contato /</div>
+    <h2 class="display-lg fade-up d1" style="margin-top:1rem">FALE COM<br><em>UM ADVOGADO</em></h2>
+    <div class="contact-info fade-up d2">
+      <div><div class="info-lbl">Endereço</div><div class="info-val">Qd. 01, Cj. 01, lote 25, loja 2<br>Térreo Estrutural – DF</div></div>
+      <div><div class="info-lbl">WhatsApp</div><div class="info-val">(61) 99868-0320</div></div>
+      <div><div class="info-lbl">E-mail</div><div class="info-val">joaofilipemc@gmail.com</div></div>
+      <div><div class="info-lbl">Atendimento</div><div class="info-val">Segunda a Sexta, 9h às 18h</div></div>
+    </div>
+  </div>
+  <form class="contact-form fade-up d2" onsubmit="return false">
+    <div class="fg">
+      <label class="flbl">Nome Completo</label>
+      <input class="finput" type="text" placeholder="Seu nome completo">
+    </div>
+    <div class="fg2">
+      <div class="fg">
+        <label class="flbl">Telefone</label>
+        <input class="finput" type="tel" placeholder="(00) 00000-0000">
+      </div>
+      <div class="fg">
+        <label class="flbl">E-mail</label>
+        <input class="finput" type="email" placeholder="seu@email.com">
+      </div>
+    </div>
+    <div class="fg">
+      <label class="flbl">Área de Interesse</label>
+      <select class="fsel">
+        <option value="">Selecione o tipo de caso...</option>
+        <option>Acidente Típico de Trabalho</option>
+        <option>Doença Ocupacional (LER/DORT)</option>
+        <option>Benefício Negado pelo INSS</option>
+        <option>Indenização Civil do Empregador</option>
+        <option>Aposentadoria por Invalidez</option>
+        <option>Outro</option>
+      </select>
+    </div>
+    <div class="fg">
+      <label class="flbl">Descreva Brevemente Seu Caso</label>
+      <textarea class="ftxt" placeholder="Conte-nos sobre sua situação..."></textarea>
+    </div>
+    <button type="submit" class="btn-gold" style="justify-content:center">Enviar Consulta →</button>
+  </form>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div>
+    <img src="data:image/jpeg;base64,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" style="height:48px;display:block;margin-bottom:1.2rem;filter:invert(1);" alt="João de Carvalho &amp; Pêgo Advocacia">
+
+    <p class="foot-desc">Especializados em acidentes de trabalho. Seu direito defendido com rigor técnico e dedicação total ao trabalhador.</p>
+  </div>
+  <div>
+    <div class="foot-col-t">Áreas de Atuação</div>
+    <ul class="foot-links">
+      <li><a href="#">Acidente Típico de Trabalho</a></li>
+      <li><a href="#">Doença Ocupacional</a></li>
+      <li><a href="#">Auxílio Acidentário INSS</a></li>
+      <li><a href="#">Indenização Civil</a></li>
+      <li><a href="#">Aposentadoria por Invalidez</a></li>
+    </ul>
+  </div>
+  <div>
+    <div class="foot-col-t">Serviços</div>
+    <ul class="foot-links">
+      <li><a href="#">Consulta Gratuita</a></li>
+      <li><a href="#">Análise do Acidente</a></li>
+      <li><a href="#">Ação no INSS</a></li>
+      <li><a href="#">Ação contra Empregador</a></li>
+      <li><a href="#">Execução de Sentença</a></li>
+    </ul>
+  </div>
+</footer>
+<div class="footer-bot">
+  <div class="footer-bot-top">
+    <p>© 2024 João de Carvalho & Pêgo Advocacia. Todos os direitos reservados.</p>
+    <div class="footer-bot-links">
+      <a href="#">Política de Privacidade</a>
+      <a href="#">Termos de Uso</a>
+    </div>
+  </div>
+  <p class="footer-bot-sub">OAB/DF 34.220 – Dr. João Filipe de Carvalho &nbsp;|&nbsp; OAB/DF 78.779 – Dra. Yasmim Estevam de Melo &nbsp;|&nbsp; OAB/DF 68.408 – Dra. Laura Lopes</p>
+  <p class="footer-bot-sub">Qd. 01, Cj. 01, lote 25, loja 2, Térreo Estrutural – DF &nbsp;|&nbsp; WhatsApp: (61) 99868-0320 &nbsp;|&nbsp; joaofilipemc@gmail.com</p>
+</div>
+
+<script>
+// Reel video — play com áudio no hover
+const reelVideo = document.getElementById('reelVideo');
+const reelFrame = document.getElementById('reelFrame');
+if (reelVideo && reelFrame) {
+  reelFrame.addEventListener('mouseenter', () => {
+    reelVideo.play();
+    reelFrame.classList.add('playing');
+  });
+  reelFrame.addEventListener('mouseleave', () => {
+    reelVideo.pause();
+    reelFrame.classList.remove('playing');
+  });
+}
+
+// Cursor glow
+const glow = document.getElementById('glow');
+document.addEventListener('mousemove', e => {
+  glow.style.left = e.clientX + 'px';
+  glow.style.top = e.clientY + 'px';
+});
+
+
+// Scroll animations
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('vis'); });
+}, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+document.querySelectorAll('.fade-up,.fade-in').forEach(el => io.observe(el));
+
+// Hero immediate reveal
+setTimeout(() => {
+  document.querySelectorAll('.hero .fade-up, .hero .fade-in').forEach(el => el.classList.add('vis'));
+}, 80);
+
+// Counter animation
+function counter(el) {
+  const target = parseInt(el.dataset.count);
+  const suffix = el.dataset.suffix || '';
+  const dur = 1800, step = target / (dur / 16);
+  let cur = 0;
+  const t = setInterval(() => {
+    cur += step;
+    if (cur >= target) { cur = target; clearInterval(t); }
+    el.textContent = Math.floor(cur) + suffix;
+  }, 16);
+}
+const cio = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { counter(e.target); cio.unobserve(e.target); } });
+}, { threshold: 0.5 });
+document.querySelectorAll('.stat-num[data-count]').forEach(el => cio.observe(el));
+
+// Hero cards expand on hover
+const pcards = document.querySelectorAll('.pcard');
+pcards.forEach(card => {
+  card.addEventListener('mouseenter', () => {
+    pcards.forEach(c => c.classList.remove('active'));
+    card.classList.add('active');
+  });
+});
+
+// Nav border on scroll
+window.addEventListener('scroll', () => {
+  document.getElementById('navbar').style.borderBottomColor =
+    window.scrollY > 50 ? 'rgba(200,169,110,.18)' : 'var(--line)';
+});
+
+// Smooth section transitions via scroll hint lines
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const id = a.getAttribute('href');
+    const el = document.querySelector(id);
+    if (el) { e.preventDefault(); el.scrollIntoView({ behavior: 'smooth' }); }
+  });
+});
+</script>
+</body>
+</html>
